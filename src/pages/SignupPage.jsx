@@ -1,0 +1,64 @@
+import axios from "axios";
+import { useState } from "react";
+export const SignupPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  async function handleSignup(e) {
+    e.preventDefult();
+    const userToCreate = {
+      username: name,
+      email,
+      password,
+    };
+    try {
+      const { data } = await axios.post(
+        "http://localhost:5005/auth/signup",
+        userToCreate
+      );
+      console.log("successful signup up", data);
+    } catch (error) {}
+    console.log(userToCreate);
+  }
+  return (
+    <div>
+      <h3>SignupPage</h3>
+      <form onSubmit={handleSignup}>
+        <label>Username:</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
+        <label>Email:</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <label>Password:</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <label>
+          Profile Image:
+          <input
+            type="file"
+            name="image"
+            multiple
+            onChange={(e) => setImages(e.target.files)}
+          />
+        </label>
+        <button>Signup</button>
+      </form>
+    </div>
+  );
+};
