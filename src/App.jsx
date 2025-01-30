@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { SignupPage } from "./pages/SignupPage";
 import { LoginPage } from "./pages/LoginPage";
-import ProfilePage from "./pages/ProfilePage";
-import NotFound from "./pages/NotFound";
-import { Navbar } from "./components/Navbar";
+import { ProfilePage } from "./pages/ProfilePage";
+import { NotFound } from "./pages/NotFound";
+import Navbar from "./components/Navbar";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<SignupPage />} />
-        <Route path="/login" element={<LoginPagePage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export const SignupPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const nav = useNavigate();
   async function handleSignup(e) {
-    e.preventDefult();
+    e.preventDefault();
     const userToCreate = {
       username: name,
       email,
@@ -17,8 +19,9 @@ export const SignupPage = () => {
         userToCreate
       );
       console.log("successful signup up", data);
+      nav("/login");
     } catch (error) {}
-    console.log(userToCreate);
+    console.log(error);
   }
   return (
     <div>
@@ -48,7 +51,7 @@ export const SignupPage = () => {
             setPassword(e.target.value);
           }}
         />
-        <label>
+        {/*<label>
           Profile Image:
           <input
             type="file"
@@ -56,7 +59,7 @@ export const SignupPage = () => {
             multiple
             onChange={(e) => setImages(e.target.files)}
           />
-        </label>
+        </label>*/}
         <button>Signup</button>
       </form>
     </div>
