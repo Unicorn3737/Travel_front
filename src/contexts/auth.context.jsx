@@ -1,0 +1,49 @@
+import axios from "axios";
+import { createContext, useEffect, useState } from "react";
+
+//firts is to create context
+const AuthContext = createContext();
+
+const AuthWrapper = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [isLoiding, setIsLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const authenticateUser = async () => {
+    //first get the token
+    const theToken = localStorage.getItem("authToken");
+    if (theToken) {
+      try {
+        const responseToVerify = await axios.get(
+          "http://localhost:5005/auth/verify",
+          { headers: { authorization: `Bearer ${theToken}` } }
+        );
+        console.log("token is valid", responseToVerify);
+        setUser(responseToVerify.data.currentUser);
+        setIsLoading(false);
+        setIsLoggedIn(true);
+      } catch (error) {
+        console.log("error validating thetoken", error);
+        setIsLoading(false);
+        setIsLoggedIn(false);
+        console.log(error);
+      }
+    } else {
+      setUser(null);
+      setIsLoading(false);
+      setIsLoggedIn(false);
+      console.log("no token present");
+    }
+  };
+  //on every refresh, validate the token in the local storage
+  useEffect(() => {
+    authenticateUser();
+  }, []);
+
+  return (
+    <AuthContext.Provider value={{ name: "Anna" }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export { AuthContext, AuthWrapper };

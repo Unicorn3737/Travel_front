@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+.error {
+  color: chartreuse;
+}
+a {
+  margin: 25px;
+}
+nav {
+  background-color: rgb(95, 224, 181);
+}

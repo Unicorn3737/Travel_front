@@ -20,8 +20,9 @@ export const SignupPage = () => {
       );
       console.log("successful signup up", data);
       nav("/login");
-    } catch (error) {}
-    console.log(error);
+    } catch (error) {
+      console.log(error);
+    }
   }
   return (
     <div>

@@ -6,7 +6,7 @@ export const Navbar = () => {
   //const { handleLogout, user } = useContext(AuthContext);
   return (
     <nav>
-      <NavLink to="/Drives">All Drives</NavLink>
+      <NavLink to="/drives">All Drives</NavLink>
 
       <NavLink to="/">Signup</NavLink>
       <NavLink to="/login">Login</NavLink>
