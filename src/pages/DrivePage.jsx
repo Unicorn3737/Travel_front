@@ -8,7 +8,7 @@ export const DrivePage = () => {
   const [days, setDays] = useState("");
   const [transport, setTransport] = useState("");
   const [phone, setPhone] = useState("");
-  const [owner, setOwner] = useState("");
+
   const [error, setError] = useState(null);
   const nav = useNavigate();
   async function handleDrive(e) {
@@ -20,16 +20,17 @@ export const DrivePage = () => {
       days,
       transport,
       phone,
-      owner,
     };
     try {
+      const theToken = localStorage.getItem("authToken");
       const { data } = await axios.post(
-        "http://localhost:5005/drive",
-        userToDrive
+        "http://localhost:5005/drive/create",
+        userToDrive,
+        { headers: { authorization: `Bearer ${theToken}` } }
       );
       console.log("successful drive", data);
       //token
-      localStorage.setItem("authToken", data.authToken);
+
       nav("/drive");
     } catch (error) {
       console.log(error);
@@ -73,27 +74,21 @@ export const DrivePage = () => {
           }}
         />
         <label>Transport:</label>
-        <input
-          type="transport"
-          value={transport}
+        <select
           onChange={(e) => {
             setTransport(e.target.value);
           }}
-        />
+        >
+          <option value="car">car</option>
+          <option value="local transport">local transport</option>
+        </select>
+
         <label>Phone:</label>
         <input
           type="phone"
           value={phone}
           onChange={(e) => {
             setPhone(e.target.value);
-          }}
-        />
-        <label>Owner:</label>
-        <input
-          type="owner"
-          value={owner}
-          onChange={(e) => {
-            setOwner(e.target.value);
           }}
         />
         {

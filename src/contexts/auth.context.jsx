@@ -1,13 +1,14 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 //firts is to create context
 const AuthContext = createContext();
-
 const AuthWrapper = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoiding, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const nav = useNavigate();
   const authenticateUser = async () => {
     //first get the token
     const theToken = localStorage.getItem("authToken");
@@ -34,13 +35,21 @@ const AuthWrapper = ({ children }) => {
       console.log("no token present");
     }
   };
+  function handleLogout() {
+    console.log("logging out");
+    localStorage.removeItem("authToken");
+    setUser(null);
+    nav("/login");
+  }
   //on every refresh, validate the token in the local storage
   useEffect(() => {
     authenticateUser();
   }, []);
 
   return (
-    <AuthContext.Provider value={{ name: "Anna" }}>
+    <AuthContext.Provider
+      value={{ user, isLoiding, isLoggedIn, authenticateUser, handleLogout }}
+    >
       {children}
     </AuthContext.Provider>
   );

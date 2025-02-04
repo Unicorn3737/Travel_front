@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../contexts/auth.context";
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const nav = useNavigate();
+  const { authenticateUser } = useContext(AuthContext);
   async function handleLogin(e) {
     e.preventDefault();
     const userToLogin = {
@@ -20,6 +22,7 @@ export const LoginPage = () => {
       console.log("successful login", data);
       //token
       localStorage.setItem("authToken", data.authToken);
+      await authenticateUser();
       nav("/profile");
     } catch (error) {
       console.log(error);
@@ -46,15 +49,17 @@ export const LoginPage = () => {
             setPassword(e.target.value);
           }}
         />
-        {/*<label>
-          Profile Image:
-          <input
-            type="file"
-            name="image"
-            multiple
-            onChange={(e) => setImages(e.target.files)}
-          />
-        </label>*/}
+        {
+          <label>
+            Profile Image:
+            <input
+              type="file"
+              name="image"
+              multiple
+              onChange={(e) => setImages(e.target.files)}
+            />
+          </label>
+        }
         <button>Login</button>
       </form>
       {error && <p className="error">{error}</p>}

@@ -18,7 +18,7 @@ function App() {
       <h1>Travel App</h1>
 
       <Routes>
-        <Route path="/" element={<SignupPage />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/drive" element={<DrivePage />} />
         <Route
