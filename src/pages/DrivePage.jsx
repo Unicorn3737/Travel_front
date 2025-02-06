@@ -30,7 +30,6 @@ export const DrivePage = () => {
       );
       console.log("successful drive", data);
       //token
-
       nav("/drive");
     } catch (error) {
       console.log(error);

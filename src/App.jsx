@@ -10,6 +10,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import PrivateRoute from "./components/PrivateRoute";
+import { AllDrivesPage } from "./pages/AllDrivesPage";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       <h1>Travel App</h1>
 
       <Routes>
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/" element={<SignupPage />} />
+
         <Route path="/login" element={<LoginPage />} />
         <Route path="/drive" element={<DrivePage />} />
         <Route
@@ -26,6 +28,14 @@ function App() {
           element={
             <PrivateRoute>
               <ProfilePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/all-drives"
+          element={
+            <PrivateRoute>
+              <AllDrivesPage />
             </PrivateRoute>
           }
         />
