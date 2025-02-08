@@ -39,6 +39,14 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/edit-drive/:driveId"
+          element={
+            <PrivateRoute>
+              <EditDrive />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
