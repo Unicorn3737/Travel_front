@@ -2,10 +2,12 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/auth.context";
+import loginImage from "../images/nature.jpg";
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [image, setImage] = useState(null);
   const nav = useNavigate();
   const { authenticateUser } = useContext(AuthContext);
   async function handleLogin(e) {
@@ -31,7 +33,21 @@ export const LoginPage = () => {
   }
   return (
     <div>
-      <h3>Login Page</h3>
+      {}
+      <img
+        src={loginImage}
+        alt="Full Screen Image"
+        style={{
+          width: "100vw",
+          height: "100vh",
+          objectFit: "cover",
+          position: "absolute",
+          top: "0",
+          left: "0",
+          zIndex: "-1",
+        }}
+      />
+      <h3>Log In</h3>
       <form onSubmit={handleLogin}>
         <label>Email:</label>
         <input
@@ -56,8 +72,23 @@ export const LoginPage = () => {
               type="file"
               name="image"
               multiple
-              onChange={(e) => setImages(e.target.files)}
+              onChange={(e) =>
+                setImages(URL.createObjectURL(e.target.files[0]))
+              }
             />
+            {}
+            {image && (
+              <img
+                src={image}
+                alt="Preview"
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  objectFit: "cover",
+                  borderRadius: "50%",
+                }}
+              />
+            )}
           </label>
         }
         <button>Login</button>

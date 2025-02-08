@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import driveImage from "../images/nature.jpg";
 export const DrivePage = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [days, setDays] = useState("");
-  const [transport, setTransport] = useState("");
+  const [transport, setTransport] = useState("car");
   const [phone, setPhone] = useState("");
-
   const [error, setError] = useState(null);
   const nav = useNavigate();
   async function handleDrive(e) {
@@ -30,7 +30,7 @@ export const DrivePage = () => {
       );
       console.log("successful drive", data);
       //token
-      nav("/drive");
+      nav("/profile");
     } catch (error) {
       console.log(error);
       setError(error.response.data.message);
@@ -38,6 +38,20 @@ export const DrivePage = () => {
   }
   return (
     <div>
+      {}
+      <img
+        src={driveImage}
+        alt="Full Screen Image"
+        style={{
+          width: "100vw",
+          height: "100vh",
+          objectFit: "cover",
+          position: "absolute",
+          top: "0",
+          left: "0",
+          zIndex: "-1",
+        }}
+      />
       <h3>Drive Page</h3>
       <form onSubmit={handleDrive}>
         <label>Title:</label>

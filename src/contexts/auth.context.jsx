@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 const AuthWrapper = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [isLoiding, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const nav = useNavigate();
   const authenticateUser = async () => {
@@ -48,7 +48,7 @@ const AuthWrapper = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, isLoiding, isLoggedIn, authenticateUser, handleLogout }}
+      value={{ user, isLoading, isLoggedIn, authenticateUser, handleLogout }}
     >
       {children}
     </AuthContext.Provider>

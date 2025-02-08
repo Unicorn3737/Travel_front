@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/auth.context";
-
+import allDrivesImage from "../images/nature.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -21,6 +21,20 @@ export const AllDrivesPage = () => {
   }, []);
   return (
     <div>
+      {}
+      <img
+        src={allDrivesImage}
+        alt="Full Screen Image"
+        style={{
+          width: "100vw",
+          height: "150vh",
+          objectFit: "cover",
+          position: "absolute",
+          top: "0",
+          left: "0",
+          zIndex: "-1",
+        }}
+      />
       {allDrives.map((oneDrive) => {
         return (
           <div key={oneDrive._id} className="Card">

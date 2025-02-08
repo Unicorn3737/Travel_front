@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import signupImage from "../images/nature.jpg";
 export const SignupPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,7 +27,21 @@ export const SignupPage = () => {
   }
   return (
     <div>
-      <h3>SignupPage</h3>
+      {}
+      <img
+        src={signupImage}
+        alt="Full Screen Image"
+        style={{
+          width: "100vw",
+          height: "100vh",
+          objectFit: "cover",
+          position: "absolute",
+          top: "0",
+          left: "0",
+          zIndex: "-1",
+        }}
+      />
+      <h3>Sign Up</h3>
       <form onSubmit={handleSignup}>
         <label>Username:</label>
         <input

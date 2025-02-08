@@ -17,6 +17,7 @@ export const Navbar = () => {
       {user ? (
         <>
           <NavLink to="/all-drives">All Drives</NavLink>
+          <NavLink to="/profile">Profile</NavLink>
           <button onClick={handleLogout}>Logout</button>
         </>
       ) : (
