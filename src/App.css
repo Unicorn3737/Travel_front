@@ -11,3 +11,14 @@ nav {
   border: 1px solid black;
   margin: 20px;
 }
+.userImage {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.driveForm {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+}

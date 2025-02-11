@@ -41,6 +41,7 @@ export const AllDrivesPage = () => {
             <h3>Title:{oneDrive.title}</h3>
             <h3>Date:{oneDrive.date}</h3>
             <h3>Owner:{oneDrive.owner.username}</h3>
+            <button>Join</button>
           </div>
         );
       })}

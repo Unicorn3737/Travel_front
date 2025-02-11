@@ -11,6 +11,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import PrivateRoute from "./components/PrivateRoute";
 import { AllDrivesPage } from "./pages/AllDrivesPage";
+import { EditDrive } from "./pages/EditDrive";
 
 function App() {
   return (

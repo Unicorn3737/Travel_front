@@ -65,8 +65,7 @@ export const LoginPage = () => {
             setPassword(e.target.value);
           }}
         />
-        {
-          <label>
+        {/*<label>
             Profile Image:
             <input
               type="file"
@@ -89,8 +88,7 @@ export const LoginPage = () => {
                 }}
               />
             )}
-          </label>
-        }
+          </label>*/}
         <button>Login</button>
       </form>
       {error && <p className="error">{error}</p>}

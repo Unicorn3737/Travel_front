@@ -53,7 +53,7 @@ export const DrivePage = () => {
         }}
       />
       <h3>Drive Page</h3>
-      <form onSubmit={handleDrive}>
+      <form className="driveForm" onSubmit={handleDrive}>
         <label>Title:</label>
         <input
           type="title"
@@ -106,7 +106,7 @@ export const DrivePage = () => {
         />
         {
           <label>
-            Profile Image:
+            Trip Image:
             <input
               type="file"
               name="image"

@@ -48,7 +48,14 @@ const AuthWrapper = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, isLoading, isLoggedIn, authenticateUser, handleLogout }}
+      value={{
+        user,
+        setUser,
+        isLoading,
+        isLoggedIn,
+        authenticateUser,
+        handleLogout,
+      }}
     >
       {children}
     </AuthContext.Provider>
