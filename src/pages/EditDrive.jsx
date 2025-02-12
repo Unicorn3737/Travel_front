@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import editImage from "../images/dino.jpg";
 export const EditDrive = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
@@ -47,8 +47,22 @@ export const EditDrive = () => {
 
   return (
     <div>
-      <h3>Update Drive Page</h3>
-      <form onSubmit={handleUpdateDrive}>
+      {}
+      <img
+        src={editImage}
+        alt="Full Screen Image"
+        style={{
+          width: "100vw",
+          height: "100vh",
+          objectFit: "cover",
+          position: "absolute",
+          top: "0",
+          left: "0",
+          zIndex: "-1",
+        }}
+      />
+      <h3></h3>
+      <form className="editForm" onSubmit={handleUpdateDrive}>
         <label>
           Title:
           <input

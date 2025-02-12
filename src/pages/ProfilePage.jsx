@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/auth.context";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import profileImage from "../images/nature.jpg";
+import profileImage from "../images/dino.jpg";
 export const ProfilePage = () => {
   const [userDrives, setUserDrives] = useState([]);
   const { user, setUser } = useContext(AuthContext);
@@ -74,13 +74,13 @@ export const ProfilePage = () => {
           zIndex: "-1",
         }}
       />
-      <h2>{user.username}'s Page</h2>
+      <h2>Welcome {user.username}</h2>
       <img
         src={user.profileImage}
         alt="Full Screen Image"
         className="userImage"
       />
-      <form onSubmit={handleProfileImage}>
+      <form className="profileForm" onSubmit={handleProfileImage}>
         <label>
           Profile Image:
           <input
@@ -99,6 +99,7 @@ export const ProfilePage = () => {
             <div key={userDrive._id} className="MyCard">
               <h3>Title:{userDrive.title}</h3>
               <h3>Date:{userDrive.date}</h3>
+              <h3>Image:{userDrive.image}</h3>
               <Link to={`/edit-drive/${userDrive._id}`}>
                 <button>Edit</button>
               </Link>
@@ -118,7 +119,7 @@ export const ProfilePage = () => {
       <button>All drives</button>
     </Link>*/}
       <Link to="/drive">
-        <button>Create a trip</button>
+        <button className="btn-create">Create a trip</button>
       </Link>
     </div>
   );

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/auth.context";
-import loginImage from "../images/nature.jpg";
+import loginImage from "../images/dino.jpg";
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -48,7 +48,7 @@ export const LoginPage = () => {
         }}
       />
       <h3>Log In</h3>
-      <form onSubmit={handleLogin}>
+      <form className="loginForm" onSubmit={handleLogin}>
         <label>Email:</label>
         <input
           type="email"

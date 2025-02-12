@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import signupImage from "../images/nature.jpg";
+import signupImage from "../images/dino.jpg";
 export const SignupPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -42,7 +42,7 @@ export const SignupPage = () => {
         }}
       />
       <h3>Sign Up</h3>
-      <form onSubmit={handleSignup}>
+      <form className="signForm" onSubmit={handleSignup}>
         <label>Username:</label>
         <input
           type="text"

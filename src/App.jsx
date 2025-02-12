@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <h1>Travel App</h1>
+      <h1>Life is Travel</h1>
 
       <Routes>
         <Route path="/" element={<SignupPage />} />

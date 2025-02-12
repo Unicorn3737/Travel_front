@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import driveImage from "../images/nature.jpg";
+import driveImage from "../images/dino.jpg";
 export const DrivePage = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");

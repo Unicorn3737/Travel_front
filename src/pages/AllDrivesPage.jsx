@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/auth.context";
-import allDrivesImage from "../images/nature.jpg";
+import allDrivesImage from "../images/dino.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
