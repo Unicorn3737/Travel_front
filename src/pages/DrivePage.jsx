@@ -80,7 +80,7 @@ export const DrivePage = () => {
         />
         <label>Days:</label>
         <input
-          type="days"
+          type="text"
           value={days}
           onChange={(e) => {
             setDays(e.target.value);
