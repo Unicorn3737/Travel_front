@@ -52,7 +52,7 @@ export const DrivePage = () => {
           zIndex: "-1",
         }}
       />
-      <h3>Drive Page</h3>
+      <h2>Let the journey begin</h2>
       <form className="driveForm" onSubmit={handleDrive}>
         <label>Title:</label>
         <input

@@ -41,7 +41,7 @@ export const SignupPage = () => {
           zIndex: "-1",
         }}
       />
-      <h3>Sign Up</h3>
+      <h3></h3>
       <form className="signForm" onSubmit={handleSignup}>
         <label>Username:</label>
         <input

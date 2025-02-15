@@ -9,11 +9,43 @@ h1 {
   text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
   text-align: right;
   margin-right: 100px;
-  margin-top: 0px;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.336);
+}
+h2 {
+  color: black;
+  text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
+  text-align: right;
+  margin-right: 100px;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.336);
 }
 nav {
-  background-color: rgba(2, 56, 38, 0.075);
-  height: 45px;
+  background-color: rgba(20, 79, 119, 0.089);
+  height: 100px;
+}
+nav img {
+  width: 115px; /* Ширина логотипа */
+  height: auto;
+  margin-top: 0;
+  float: right;
+  margin-right: 10px;
+}
+.login {
+  color: black;
+  text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
+  background-color: rgba(255, 255, 255, 0.363);
+  border: none;
+  cursor: pointer; /* курсор в виде руки */
+  transition: background-color 0.3s ease; /* плавный переход цвета */
+  font-weight: bold;
+  font-size: 20px;
+  top: 0;
+  float: left;
+  letter-spacing: 1px;
+}
+login:hover {
+  background-color: #e634a2e7; /* цвет кнопки при наведении */
 }
 .Card {
   flex-direction: column;
@@ -30,8 +62,8 @@ nav {
   background-color: #f9f9f927;
   background: linear-gradient(
     to right,
-    rgba(183, 241, 21, 0.219),
-    rgba(241, 18, 204, 0.116)
+    rgba(182, 241, 21, 0.692),
+    rgba(241, 18, 204, 0.582)
   );
   font-size: 16px;
   line-height: 1.6;
@@ -39,33 +71,85 @@ nav {
 .userImage {
   height: 180px;
   width: 180px;
-  margin-left: 450px;
+  margin-left: 40px;
+  margin-top: 10px;
   border-radius: 50%;
   object-fit: cover;
+  float: left;
 }
 .profileForm {
   display: flex;
   flex-direction: column;
   width: 18vw;
-  margin-left: 450px;
-  margin-top: 70px;
+  margin-left: -150px;
+  margin-top: 200px;
+  margin-bottom: 50px;
   font-size: 22px;
   line-height: 2;
+  float: left;
+  background: linear-gradient(
+    to right,
+    rgba(182, 241, 21, 0.781),
+    rgba(241, 18, 204, 0.616)
+  );
 }
 .btn-create {
-  display: flex;
   flex-direction: column;
-  margin-left: 450px;
+  margin-left: -200px;
+  margin-top: 300px;
+  border: 2px solid #040d13;
+  border-radius: 15%;
+  background-color: #eeb20ee0; /* начальный цвет кнопки */
+  color: white; /* цвет текста */
+  padding: 10px 20px; /* отступы */
+  border: none; /* без рамки */
+  border-radius: 5px; /* скругленные углы */
+  cursor: pointer; /* курсор в виде руки */
+  transition: background-color 0.3s ease;
 }
 .driveForm {
+  /*color: rgb(77, 42, 2);
+  text-shadow: 2px 2px 0 rgba(239, 244, 245, 0.938);
+  background-color: rgb(248, 207, 159);
+  border: none;
+  cursor: pointer; /* курсор в виде руки */
+  /*transition: background-color 0.3s ease; /* плавный переход цвета */
+  /*font-weight: bold;
+  top: 0;
+  float: left;
+  letter-spacing: 1px;
   display: flex;
   flex-direction: column;
-  color: black;
-  text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
   width: 25vw;
   margin-left: 450px;
   font-size: 22px;
-  line-height: 1.4;
+  line-height: 1.4;*/
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  margin-left: 450px;
+  color: rgba(13, 14, 0, 0.911);
+  text-shadow: 2px 2px 0 rgba(62, 228, 20, 0.199);
+  justify-content: left;
+  align-items: flex-start;
+  border: 2px solid #2f442c; /* Для наглядности */
+  padding: 40px; /* Отступы внутри формы */
+  border-radius: 10px; /* Закругленные углы */
+  margin-top: -60px;
+  background-color: #f9f9f9e1;
+  background: linear-gradient(
+    to right,
+    rgba(182, 241, 21, 0.747),
+    rgba(241, 18, 204, 0.664)
+  );
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: bold;
+  input {
+    width: 80%; /* Поле растягивается на всю доступную ширину контейнера */
+    padding: 8px;
+    font-size: 12px;
+  }
 }
 .loginForm {
   display: flex;
@@ -83,11 +167,22 @@ nav {
   background-color: #f9f9f927;
   background: linear-gradient(
     to right,
-    rgba(183, 241, 21, 0.219),
-    rgba(241, 18, 204, 0.116)
+    rgba(182, 241, 21, 0.685),
+    rgba(241, 18, 204, 0.582)
   );
   font-size: 22px;
   line-height: 2;
+}
+.loginForm button {
+  margin-top: 10px;
+  border-radius: 15%;
+  background-color: #eeb20ee0; /* начальный цвет кнопки */
+  color: white; /* цвет текста */
+  padding: 10px 20px; /* отступы */
+  border: none; /* без рамки */
+  border-radius: 5px; /* скругленные углы */
+  cursor: pointer; /* курсор в виде руки */
+  transition: background-color 0.3s ease;
 }
 .signForm {
   display: flex;
@@ -105,11 +200,31 @@ nav {
   background-color: #f9f9f927;
   background: linear-gradient(
     to right,
-    rgba(183, 241, 21, 0.219),
-    rgba(241, 18, 204, 0.116)
+    rgba(182, 241, 21, 0.712),
+    rgba(241, 18, 204, 0.603)
   );
   font-size: 23px;
   line-height: 1.8;
+}
+.signForm button {
+  margin-top: 10px;
+  border-radius: 15%;
+  background-color: #eeb20ee0; /* начальный цвет кнопки */
+  color: white; /* цвет текста */
+  padding: 10px 20px; /* отступы */
+  border: none; /* без рамки */
+  border-radius: 5px; /* скругленные углы */
+  cursor: pointer; /* курсор в виде руки */
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #a30b7d56; /* цвет кнопки при наведении */
+}
+h2 {
+  margin-bottom: -70px;
+  position: absolute;
+  top: 70px;
+  text-shadow: #a30b7d56;
 }
 .editForm {
   display: flex;

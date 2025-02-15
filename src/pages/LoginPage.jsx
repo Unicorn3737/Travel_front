@@ -47,7 +47,7 @@ export const LoginPage = () => {
           zIndex: "-1",
         }}
       />
-      <h3>Log In</h3>
+      <h3></h3>
       <form className="loginForm" onSubmit={handleLogin}>
         <label>Email:</label>
         <input
