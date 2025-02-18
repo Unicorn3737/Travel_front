@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import editImage from "../images/dino.jpg";
+import { API_URL } from "../config/config";
 export const DetailsDrive = () => {
   const [drive, setDrive] = useState({});
   const { driveId } = useParams();
@@ -11,9 +12,7 @@ export const DetailsDrive = () => {
   useEffect(() => {
     async function getOneDetail() {
       try {
-        const { data } = await axios.get(
-          `${API_URL}5005/drive/details/${driveId}`
-        );
+        const { data } = await axios.get(`${API_URL}drive/details/${driveId}`);
         console.log("here is the one drive on the front", data);
         setDrive(data);
       } catch (error) {

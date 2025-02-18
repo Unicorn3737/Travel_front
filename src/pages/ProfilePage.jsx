@@ -13,7 +13,7 @@ export const ProfilePage = () => {
       const myFormData = new FormData();
       myFormData.append("imageUrl", event.target.image.files[0]);
       const { data } = await axios.post(
-        `${API_URL}5005/auth/profileImage/${user._id}`,
+        `${API_URL}auth/profileImage/${user._id}`,
         myFormData
       );
       console.log("image uploaded successfully", data);
@@ -28,7 +28,7 @@ export const ProfilePage = () => {
     async function getUserDrives() {
       try {
         const { data } = await axios.get(
-          `${API_URL}5005/drive/user-drives/${user._id}`
+          `${API_URL}drive/user-drives/${user._id}`
         );
         console.log(data);
         setUserDrives(data);
@@ -42,9 +42,7 @@ export const ProfilePage = () => {
   async function handleDelete(driveId) {
     console.log("delete clicked", driveId);
     try {
-      const { data } = await axios.delete(
-        `${API_URL}5005/drive/delete/${driveId}`
-      );
+      const { data } = await axios.delete(`${API_URL}drive/delete/${driveId}`);
       console.log("successfully deleted", data);
       //update the state to reflect the changes
       const filteredDrives = userDrives.filter((driveInFilter) => {

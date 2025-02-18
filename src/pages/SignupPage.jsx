@@ -17,7 +17,7 @@ export const SignupPage = () => {
       password,
     };
     try {
-      const { data } = await axios.post(`${API_URL}/auth/signup`, userToCreate);
+      const { data } = await axios.post(`${API_URL}auth/signup`, userToCreate);
       console.log("successful signup up", data);
       nav("/login");
     } catch (error) {

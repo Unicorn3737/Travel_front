@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import editImage from "../images/dino.jpg";
+import { API_URL } from "../config/config";
 export const EditDrive = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
@@ -14,7 +15,7 @@ export const EditDrive = () => {
     async function getOneDrive() {
       try {
         const { data } = await axios.get(
-          `${API_URL}5005/drive/edit-drive/${driveId}`
+          `${API_URL}drive/edit-drive/${driveId}`
         );
         console.log("here is the one drive on the front", data);
         setTitle(data.title);
@@ -35,7 +36,7 @@ export const EditDrive = () => {
     };
     try {
       const { data } = await axios.put(
-        `${API_URL}5005/drive/update/${driveId}`,
+        `${API_URL}drive/update/${driveId}`,
         driveToUpdate
       );
       console.log("successful updating the drive", data);

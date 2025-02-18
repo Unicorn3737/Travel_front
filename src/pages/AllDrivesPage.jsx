@@ -13,7 +13,7 @@ export const AllDrivesPage = () => {
   async function handleJoin(driveId) {
     try {
       const { data } = await axios.get(
-        `${API_URL}5005/drive/join/${user._id}/${driveId}`
+        `${API_URL}drive/join/${user._id}/${driveId}`
       );
       console.log(data);
       setJoin(true);
@@ -26,7 +26,7 @@ export const AllDrivesPage = () => {
   }
   useEffect(() => {
     async function getAllDrives() {
-      const { data } = await axios.get(`${API_URL}5005/drive/all-drives`);
+      const { data } = await axios.get(`${API_URL}drive/all-drives`);
       console.log(data);
       setAllDrives(data);
     }

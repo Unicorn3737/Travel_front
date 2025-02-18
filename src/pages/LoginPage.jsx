@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/auth.context";
 import loginImage from "../images/dino.jpg";
+import { API_URL } from "../config/config";
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,10 +18,7 @@ export const LoginPage = () => {
       password,
     };
     try {
-      const { data } = await axios.post(
-        `${API_URL}5005/auth/login`,
-        userToLogin
-      );
+      const { data } = await axios.post(`${API_URL}auth/login`, userToLogin);
       console.log("successful login", data);
       //token
       localStorage.setItem("authToken", data.authToken);
