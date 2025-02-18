@@ -12,7 +12,7 @@ export const DetailsDrive = () => {
     async function getOneDetail() {
       try {
         const { data } = await axios.get(
-          `http://localhost:5005/drive/details/${driveId}`
+          `${API_URL}5005/drive/details/${driveId}`
         );
         console.log("here is the one drive on the front", data);
         setDrive(data);

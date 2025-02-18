@@ -2,7 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import signupImage from "../images/dino.jpg";
+import { API_URL } from "../config/config";
 export const SignupPage = () => {
+  console.log(API_URL);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,10 +17,7 @@ export const SignupPage = () => {
       password,
     };
     try {
-      const { data } = await axios.post(
-        "http://localhost:5005/auth/signup",
-        userToCreate
-      );
+      const { data } = await axios.post(`${API_URL}/auth/signup`, userToCreate);
       console.log("successful signup up", data);
       nav("/login");
     } catch (error) {

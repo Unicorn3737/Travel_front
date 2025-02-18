@@ -14,10 +14,9 @@ const AuthWrapper = ({ children }) => {
     const theToken = localStorage.getItem("authToken");
     if (theToken) {
       try {
-        const responseToVerify = await axios.get(
-          "http://localhost:5005/auth/verify",
-          { headers: { authorization: `Bearer ${theToken}` } }
-        );
+        const responseToVerify = await axios.get(`${API_URL}5005/auth/verify`, {
+          headers: { authorization: `Bearer ${theToken}` },
+        });
         console.log("token is valid", responseToVerify);
         setUser(responseToVerify.data.currentUser);
         setIsLoading(false);

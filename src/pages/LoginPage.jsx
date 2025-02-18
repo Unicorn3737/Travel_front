@@ -18,7 +18,7 @@ export const LoginPage = () => {
     };
     try {
       const { data } = await axios.post(
-        "http://localhost:5005/auth/login",
+        `${API_URL}5005/auth/login`,
         userToLogin
       );
       console.log("successful login", data);

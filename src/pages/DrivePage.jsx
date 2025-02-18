@@ -24,7 +24,7 @@ export const DrivePage = () => {
     try {
       const theToken = localStorage.getItem("authToken");
       const { data } = await axios.post(
-        "http://localhost:5005/drive/create",
+        `${API_URL}5005/drive/create`,
         userToDrive,
         { headers: { authorization: `Bearer ${theToken}` } }
       );

@@ -1,27 +1,32 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/auth.context";
 import allDrivesImage from "../images/dino.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const AllDrivesPage = () => {
   const [allDrives, setAllDrives] = useState([]);
+  const [join, setJoin] = useState(false);
   const { user } = useContext(AuthContext);
+  const nav = useNavigate();
   console.log("here all trips", user);
   async function handleJoin(driveId) {
     try {
       const { data } = await axios.get(
-        `http://localhost:5005/drive/join/${user._id}/${driveId}`
+        `${API_URL}5005/drive/join/${user._id}/${driveId}`
       );
+      console.log(data);
+      setJoin(true);
+      setTimeout(() => {
+        nav("/profile");
+      }, 2000);
     } catch (error) {
       console.log(error);
     }
   }
   useEffect(() => {
     async function getAllDrives() {
-      const { data } = await axios.get(
-        "http://localhost:5005/drive/all-drives"
-      );
+      const { data } = await axios.get(`${API_URL}5005/drive/all-drives`);
       console.log(data);
       setAllDrives(data);
     }
@@ -43,6 +48,7 @@ export const AllDrivesPage = () => {
           zIndex: "-1",
         }}
       />
+      {join && <p>Nice choice!</p>}
       {allDrives.map((oneDrive) => {
         return (
           <div key={oneDrive._id} className="Card">
