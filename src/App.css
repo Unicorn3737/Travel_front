@@ -8,6 +8,7 @@ h1 {
   color: black;
   text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
   text-align: right;
+  margin-left: 1000px;
   margin-right: 100px;
   margin-top: 10px;
   background-color: rgba(255, 255, 255, 0.336);
@@ -222,7 +223,7 @@ button:hover {
 }
 h2 {
   margin-bottom: -70px;
-  position: absolute;
+
   top: 70px;
   text-shadow: #a30b7d56;
 }

@@ -12,7 +12,7 @@ export const DetailsDrive = () => {
   useEffect(() => {
     async function getOneDetail() {
       try {
-        const { data } = await axios.get(`${API_URL}drive/details/${driveId}`);
+        const { data } = await axios.get(`${API_URL}/drive/details/${driveId}`);
         console.log("here is the one drive on the front", data);
         setDrive(data);
       } catch (error) {

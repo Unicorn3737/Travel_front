@@ -15,7 +15,7 @@ export const EditDrive = () => {
     async function getOneDrive() {
       try {
         const { data } = await axios.get(
-          `${API_URL}drive/edit-drive/${driveId}`
+          `${API_URL}/drive/edit-drive/${driveId}`
         );
         console.log("here is the one drive on the front", data);
         setTitle(data.title);
@@ -36,7 +36,7 @@ export const EditDrive = () => {
     };
     try {
       const { data } = await axios.put(
-        `${API_URL}drive/update/${driveId}`,
+        `${API_URL}/drive/update/${driveId}`,
         driveToUpdate
       );
       console.log("successful updating the drive", data);

@@ -13,6 +13,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import { AllDrivesPage } from "./pages/AllDrivesPage";
 import { EditDrive } from "./pages/EditDrive";
 import { DetailsDrive } from "./pages/DetailsDrive";
+import { API_URL } from "./config/config";
 
 function App() {
   return (

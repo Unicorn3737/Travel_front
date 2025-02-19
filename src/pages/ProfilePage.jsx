@@ -3,8 +3,10 @@ import { AuthContext } from "../contexts/auth.context";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import profileImage from "../images/dino.jpg";
+import { API_URL } from "../config/config";
 export const ProfilePage = () => {
   const [userDrives, setUserDrives] = useState([]);
+  const [joinDrives, setJoinDrives] = useState([]);
   const { user, setUser } = useContext(AuthContext);
   const [image, setImage] = useState(null);
   async function handleProfileImage(event) {
@@ -13,7 +15,7 @@ export const ProfilePage = () => {
       const myFormData = new FormData();
       myFormData.append("imageUrl", event.target.image.files[0]);
       const { data } = await axios.post(
-        `${API_URL}auth/profileImage/${user._id}`,
+        `${API_URL}/auth/profileImage/${user._id}`,
         myFormData
       );
       console.log("image uploaded successfully", data);
@@ -28,10 +30,11 @@ export const ProfilePage = () => {
     async function getUserDrives() {
       try {
         const { data } = await axios.get(
-          `${API_URL}drive/user-drives/${user._id}`
+          `${API_URL}/drive/user-drives/${user._id}`
         );
         console.log(data);
-        setUserDrives(data);
+        setUserDrives(data.Drives);
+        setJoinDrives(data.currentUser.trips);
       } catch (err) {
         console.log(err);
       }
@@ -42,7 +45,7 @@ export const ProfilePage = () => {
   async function handleDelete(driveId) {
     console.log("delete clicked", driveId);
     try {
-      const { data } = await axios.delete(`${API_URL}drive/delete/${driveId}`);
+      const { data } = await axios.delete(`${API_URL}/drive/delete/${driveId}`);
       console.log("successfully deleted", data);
       //update the state to reflect the changes
       const filteredDrives = userDrives.filter((driveInFilter) => {
@@ -89,6 +92,7 @@ export const ProfilePage = () => {
         </label>
         <button>Submit</button>
       </form>
+      <h3>Your created trips</h3>
       {userDrives.length === 0 ? (
         <p>You don't have any drives</p>
       ) : (
@@ -97,7 +101,7 @@ export const ProfilePage = () => {
             <div key={userDrive._id} className="MyCard">
               <h3>Title:{userDrive.title}</h3>
               <h3>Date:{userDrive.date}</h3>
-              <h3>Image:{userDrive.image}</h3>
+
               <Link to={`/edit-drive/${userDrive._id}`}>
                 <button>Edit</button>
               </Link>
@@ -112,7 +116,19 @@ export const ProfilePage = () => {
           );
         })
       )}
-
+      <h3>Your join trips</h3>
+      {joinDrives.length === 0 ? (
+        <p>No trips yet</p>
+      ) : (
+        joinDrives.map((userDrive) => {
+          return (
+            <div key={userDrive._id} className="MyCard">
+              <h3>Title:{userDrive.title}</h3>
+              <h3>Date:{userDrive.date}</h3>
+            </div>
+          );
+        })
+      )}
       {/*<Link to="/all-drives">
       <button>All drives</button>
     </Link>*/}

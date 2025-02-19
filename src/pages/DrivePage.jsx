@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import driveImage from "../images/dino.jpg";
+import { API_URL } from "../config/config";
 export const DrivePage = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
@@ -23,9 +24,13 @@ export const DrivePage = () => {
     };
     try {
       const theToken = localStorage.getItem("authToken");
-      const { data } = await axios.post(`${API_URL}drive/create`, userToDrive, {
-        headers: { authorization: `Bearer ${theToken}` },
-      });
+      const { data } = await axios.post(
+        `${API_URL}/drive/create`,
+        userToDrive,
+        {
+          headers: { authorization: `Bearer ${theToken}` },
+        }
+      );
       console.log("successful drive", data);
       //token
       nav("/profile");

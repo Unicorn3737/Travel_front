@@ -18,7 +18,7 @@ export const LoginPage = () => {
       password,
     };
     try {
-      const { data } = await axios.post(`${API_URL}auth/login`, userToLogin);
+      const { data } = await axios.post(`${API_URL}/auth/login`, userToLogin);
       console.log("successful login", data);
       //token
       localStorage.setItem("authToken", data.authToken);

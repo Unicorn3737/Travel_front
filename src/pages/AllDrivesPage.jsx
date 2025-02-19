@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/auth.context";
 import allDrivesImage from "../images/dino.jpg";
 import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../config/config";
 import axios from "axios";
 
 export const AllDrivesPage = () => {
@@ -13,7 +14,7 @@ export const AllDrivesPage = () => {
   async function handleJoin(driveId) {
     try {
       const { data } = await axios.get(
-        `${API_URL}drive/join/${user._id}/${driveId}`
+        `${API_URL}/drive/join/${user._id}/${driveId}`
       );
       console.log(data);
       setJoin(true);
@@ -26,7 +27,7 @@ export const AllDrivesPage = () => {
   }
   useEffect(() => {
     async function getAllDrives() {
-      const { data } = await axios.get(`${API_URL}drive/all-drives`);
+      const { data } = await axios.get(`${API_URL}/drive/all-drives`);
       console.log(data);
       setAllDrives(data);
     }
