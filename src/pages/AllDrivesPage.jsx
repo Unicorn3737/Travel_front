@@ -35,20 +35,6 @@ export const AllDrivesPage = () => {
   }, []);
   return (
     <div>
-      {}
-      <img
-        src={allDrivesImage}
-        alt="Full Screen Image"
-        style={{
-          width: "100vw",
-          height: "150vh",
-          objectFit: "cover",
-          position: "absolute",
-          top: "0",
-          left: "0",
-          zIndex: "-1",
-        }}
-      />
       {join && <p>Nice choice!</p>}
       {allDrives.map((oneDrive) => {
         return (

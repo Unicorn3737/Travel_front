@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import signupImage from "../images/dino.jpg";
 import { API_URL } from "../config/config";
 export const SignupPage = () => {
   console.log(API_URL);
@@ -25,22 +24,7 @@ export const SignupPage = () => {
     }
   }
   return (
-    <div>
-      {}
-      <img
-        src={signupImage}
-        alt="Full Screen Image"
-        style={{
-          width: "100vw",
-          height: "100vh",
-          objectFit: "cover",
-          position: "absolute",
-          top: "0",
-          left: "0",
-          zIndex: "-1",
-        }}
-      />
-      <h3></h3>
+    <div className="SignupPage">
       <form className="signForm" onSubmit={handleSignup}>
         <label>Username:</label>
         <input

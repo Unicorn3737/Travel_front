@@ -47,22 +47,7 @@ export const EditDrive = () => {
   }
 
   return (
-    <div>
-      {}
-      <img
-        src={editImage}
-        alt="Full Screen Image"
-        style={{
-          width: "100vw",
-          height: "100vh",
-          objectFit: "cover",
-          position: "absolute",
-          top: "0",
-          left: "0",
-          zIndex: "-1",
-        }}
-      />
-      <h3></h3>
+    <div className="editPage">
       <form className="editForm" onSubmit={handleUpdateDrive}>
         <label>
           Title:

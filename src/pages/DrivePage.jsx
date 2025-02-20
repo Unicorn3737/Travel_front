@@ -41,20 +41,6 @@ export const DrivePage = () => {
   }
   return (
     <div>
-      {}
-      <img
-        src={driveImage}
-        alt="Full Screen Image"
-        style={{
-          width: "100vw",
-          height: "100vh",
-          objectFit: "cover",
-          position: "absolute",
-          top: "0",
-          left: "0",
-          zIndex: "-1",
-        }}
-      />
       <h2>Let the journey begin</h2>
       <form className="driveForm" onSubmit={handleDrive}>
         <label>Title:</label>

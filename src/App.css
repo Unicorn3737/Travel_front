@@ -1,32 +1,32 @@
 .error {
   color: rgb(65, 126, 5);
 }
+body {
+  background-image: url("/src/images/dino.jpg");
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 a {
   margin: 25px;
 }
 p {
   color: #012124;
   background-color: rgba(240, 248, 255, 0.281);
-  margin-left: 300px;
-  margin-right: 700px;
 }
 h1 {
   color: black;
   text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
   text-align: right;
-  margin-left: 1000px;
+  margin-left: 700px;
   margin-right: 100px;
-  margin-top: 10px;
+  margin-top: 5px;
   background-color: rgba(255, 255, 255, 0.336);
 }
 h2 {
-  display: flex;
   color: black;
   text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
-  text-align: right;
-  margin-right: 100px;
-  margin-left: 1000px;
-  margin-top: 10px;
+  text-align: left;
   background-color: rgba(255, 255, 255, 0.336);
 }
 nav {
@@ -80,33 +80,51 @@ login:hover {
 .userImage {
   height: 180px;
   width: 180px;
-  margin-left: 40px;
-  margin-top: 10px;
+  margin: 0;
   border-radius: 50%;
   object-fit: cover;
-  float: left;
 }
 .profileForm {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
   width: 18vw;
-  margin-left: -150px;
-  margin-top: 200px;
-  margin-bottom: 50px;
   font-size: 22px;
   line-height: 2;
-  float: left;
   background: linear-gradient(
     to right,
     rgba(182, 241, 21, 0.781),
     rgba(241, 18, 204, 0.616)
   );
 }
-.btn-create {
+.profilePage {
+  display: flex;
+  justify-content: space-evenly;
+}
+.Right {
+  width: 30%;
+  display: flex;
   flex-direction: column;
-  margin-top: 0px;
-  margin-left: -200px;
-  margin-top: 385px;
+  align-items: center;
+}
+.Middle {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Left {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Left h3 {
+  font-size: 2rem;
+  background-color: #c1edf044;
+}
+
+.btn-create {
   border: 2px solid #040d13;
   border-radius: 10%;
   background-color: #eeb20ee0; /* начальный цвет кнопки */
@@ -172,8 +190,6 @@ login:hover {
   border: 2px solid #2f442c; /* Для наглядности */
   padding: 40px; /* Отступы внутри формы */
   border-radius: 8px; /* Закругленные углы */
-  margin-left: 450px;
-  margin-top: 105px;
   background-color: #f9f9f927;
   background: linear-gradient(
     to right,
@@ -182,6 +198,11 @@ login:hover {
   );
   font-size: 22px;
   line-height: 2;
+}
+.LoginPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .loginForm button {
   margin-top: 10px;
@@ -205,8 +226,6 @@ login:hover {
   border: 2px solid #2f442c; /* Для наглядности */
   padding: 30px; /* Отступы внутри формы */
   border-radius: 8px; /* Закругленные углы */
-  margin-left: 450px;
-  margin-top: 105px;
   background-color: #f9f9f927;
   background: linear-gradient(
     to right,
@@ -215,6 +234,11 @@ login:hover {
   );
   font-size: 23px;
   line-height: 1.8;
+}
+.SignupPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .signForm button {
   margin-top: 10px;
@@ -246,8 +270,6 @@ h2 {
   border: 2px solid #2f442c; /* Для наглядности */
   padding: 30px; /* Отступы внутри формы */
   border-radius: 8px; /* Закругленные углы */
-  margin-left: 450px;
-  margin-top: 105px;
   background-color: #f9f9f927;
   background: linear-gradient(
     to right,
@@ -256,6 +278,11 @@ h2 {
   );
   font-size: 23px;
   line-height: 1.8;
+}
+.editPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .MyCard {
   display: flex;
@@ -268,8 +295,6 @@ h2 {
   border: 1px solid #2f442c; /* Для наглядности */
   padding: 30px; /* Отступы внутри формы */
   border-radius: 6px; /* Закругленные углы */
-  margin-left: 350px;
-  margin-top: 10px;
   background-color: #f9f9f927;
   background: linear-gradient(
     to right,
@@ -279,14 +304,7 @@ h2 {
   font-size: 16px;
   line-height: 0.5;
 }
-.title {
-  background-color: #f5ebf55d;
-  font-family: Arial, sans-serif;
-  text-shadow: #13c6d3;
-  margin-left: 350px;
-  margin-right: 800px;
-  margin-top: 80px;
-}
+
 .MyCard2 {
   display: flex;
   flex-direction: column;
@@ -298,9 +316,6 @@ h2 {
   border: 1px solid #2f442c; /* Для наглядности */
   padding: 30px; /* Отступы внутри формы */
   border-radius: 6px; /* Закругленные углы */
-  margin-left: 850px;
-  margin-bottom: 300px;
-  margin-bottom: 100px;
   background-color: #f9f9f927;
   background: linear-gradient(
     to right,
@@ -311,15 +326,7 @@ h2 {
   font-size: 16px;
   line-height: 0.5;
 }
-.title2 {
-  background-color: #f3e9f35d;
-  font-family: Arial, sans-serif;
-  text-shadow: #13c6d3;
-  margin-left: 850px;
-  margin-right: 800px;
-  margin-top: 0px;
-  margin-bottom: -310px;
-}
+
 .DetailPage {
   display: flex;
   flex-direction: column;
@@ -344,7 +351,7 @@ h2 {
 }
 
 /* Для очень маленьких экранов (например, телефонов в портретной ориентации) */
-@media (max-width: 480px) {
+@media (max-width: 900px) {
   /* Уменьшаем размер шрифта еще больше */
   h1,
   h2 {
@@ -361,7 +368,16 @@ h2 {
   .DetailPage {
     width: 90vw;
   }
-
+  .profilePage {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Right,
+  .Left,
+  .Middle {
+    width: 95vw;
+    margin: 20px;
+  }
   .userImage {
     height: 120px;
     width: 120px;
