@@ -92,7 +92,7 @@ export const ProfilePage = () => {
         </label>
         <button>Submit</button>
       </form>
-      <h3>Your created trips</h3>
+      <h3 className="title">Your created trips</h3>
       {userDrives.length === 0 ? (
         <p>You don't have any drives</p>
       ) : (
@@ -116,15 +116,16 @@ export const ProfilePage = () => {
           );
         })
       )}
-      <h3>Your join trips</h3>
+      <h3 className="title2">Your join trips</h3>
       {joinDrives.length === 0 ? (
-        <p>No trips yet</p>
+        <p></p>
       ) : (
         joinDrives.map((userDrive) => {
           return (
-            <div key={userDrive._id} className="MyCard">
+            <div key={userDrive._id} className="MyCard2">
               <h3>Title:{userDrive.title}</h3>
               <h3>Date:{userDrive.date}</h3>
+              <h3>Phone:{userDrive.phone}</h3>
             </div>
           );
         })

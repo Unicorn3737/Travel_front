@@ -24,19 +24,19 @@ export const DetailsDrive = () => {
 
   return (
     <div>
-      <h1>
+      <h1 className="DetailPage">
         Title:
         {drive.title}
       </h1>
-      <h1>
+      <h1 className="DetailPage">
         Date:
         {drive.date}
       </h1>
-      <h1>Location:{drive.location}</h1>
-      <h1>Days:{drive.days}</h1>
-      <h1>Transport:{drive.transport}</h1>
-      <h1>Phone:{drive.phone}</h1>
-      <h1>Owner:{drive.owner?.username}</h1>
+      <h1 className="DetailPage">Location:{drive.location}</h1>
+      <h1 className="DetailPage">Days:{drive.days}</h1>
+      <h1 className="DetailPage">Transport:{drive.transport}</h1>
+      <h1 className="DetailPage">Phone:{drive.phone}</h1>
+      <h1 className="DetailPage">Owner:{drive.owner?.username}</h1>
       {/*<h1>{drive.travelers}</h1>*/}
     </div>
   );

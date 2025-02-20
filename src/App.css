@@ -4,6 +4,12 @@
 a {
   margin: 25px;
 }
+p {
+  color: #012124;
+  background-color: rgba(240, 248, 255, 0.281);
+  margin-left: 300px;
+  margin-right: 700px;
+}
 h1 {
   color: black;
   text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
@@ -14,10 +20,12 @@ h1 {
   background-color: rgba(255, 255, 255, 0.336);
 }
 h2 {
+  display: flex;
   color: black;
   text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
   text-align: right;
   margin-right: 100px;
+  margin-left: 1000px;
   margin-top: 10px;
   background-color: rgba(255, 255, 255, 0.336);
 }
@@ -67,7 +75,7 @@ login:hover {
     rgba(241, 18, 204, 0.582)
   );
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1;
 }
 .userImage {
   height: 180px;
@@ -96,14 +104,15 @@ login:hover {
 }
 .btn-create {
   flex-direction: column;
+  margin-top: 0px;
   margin-left: -200px;
-  margin-top: 300px;
+  margin-top: 385px;
   border: 2px solid #040d13;
-  border-radius: 15%;
+  border-radius: 10%;
   background-color: #eeb20ee0; /* начальный цвет кнопки */
-  color: white; /* цвет текста */
+  color: rgb(34, 2, 2); /* цвет текста */
   padding: 10px 20px; /* отступы */
-  border: none; /* без рамки */
+  border: rgb(35, 68, 2); /* без рамки */
   border-radius: 5px; /* скругленные углы */
   cursor: pointer; /* курсор в виде руки */
   transition: background-color 0.3s ease;
@@ -136,7 +145,7 @@ login:hover {
   border: 2px solid #2f442c; /* Для наглядности */
   padding: 40px; /* Отступы внутри формы */
   border-radius: 10px; /* Закругленные углы */
-  margin-top: -60px;
+  margin-top: -100px;
   background-color: #f9f9f9e1;
   background: linear-gradient(
     to right,
@@ -223,7 +232,6 @@ button:hover {
 }
 h2 {
   margin-bottom: -70px;
-
   top: 70px;
   text-shadow: #a30b7d56;
 }
@@ -232,7 +240,7 @@ h2 {
   flex-direction: column;
   width: 20vw;
   color: black;
-  text-shadow: 2px 2px 0 rgb(243, 143, 13);
+  text-shadow: 2px 2px 0 rgb(223, 9, 223);
   justify-content: center;
   align-items: center;
   border: 2px solid #2f442c; /* Для наглядности */
@@ -248,4 +256,132 @@ h2 {
   );
   font-size: 23px;
   line-height: 1.8;
+}
+.MyCard {
+  display: flex;
+  flex-direction: column;
+  width: 18vw;
+  color: black;
+  text-shadow: 2px 2px 0 rgb(238, 15, 163);
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #2f442c; /* Для наглядности */
+  padding: 30px; /* Отступы внутри формы */
+  border-radius: 6px; /* Закругленные углы */
+  margin-left: 350px;
+  margin-top: 10px;
+  background-color: #f9f9f927;
+  background: linear-gradient(
+    to right,
+    rgba(182, 241, 21, 0.705),
+    rgba(241, 18, 204, 0.562)
+  );
+  font-size: 16px;
+  line-height: 0.5;
+}
+.title {
+  background-color: #f5ebf55d;
+  font-family: Arial, sans-serif;
+  text-shadow: #13c6d3;
+  margin-left: 350px;
+  margin-right: 800px;
+  margin-top: 80px;
+}
+.MyCard2 {
+  display: flex;
+  flex-direction: column;
+  width: 18vw;
+  color: black;
+  text-shadow: 2px 2px 0 rgb(238, 15, 163);
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #2f442c; /* Для наглядности */
+  padding: 30px; /* Отступы внутри формы */
+  border-radius: 6px; /* Закругленные углы */
+  margin-left: 850px;
+  margin-bottom: 300px;
+  margin-bottom: 100px;
+  background-color: #f9f9f927;
+  background: linear-gradient(
+    to right,
+    rgba(182, 241, 21, 0.404),
+    rgba(241, 18, 204, 0.438)
+  );
+
+  font-size: 16px;
+  line-height: 0.5;
+}
+.title2 {
+  background-color: #f3e9f35d;
+  font-family: Arial, sans-serif;
+  text-shadow: #13c6d3;
+  margin-left: 850px;
+  margin-right: 800px;
+  margin-top: 0px;
+  margin-bottom: -310px;
+}
+.DetailPage {
+  display: flex;
+  flex-direction: column;
+  width: 18vw;
+  margin-left: 400px;
+  color: rgba(13, 14, 0, 0.911);
+  text-shadow: 2px 2px 0 rgba(62, 228, 20, 0.199);
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #2f442c; /* Для наглядности */
+  padding: 20px; /* Отступы внутри формы */
+  border-radius: 8px; /* Закругленные углы */
+  margin-top: 5px;
+  background-color: #ee0c0c27;
+  background: linear-gradient(
+    to left,
+    rgba(182, 241, 21, 0.692),
+    rgba(241, 18, 204, 0.582)
+  );
+  font-size: 17px;
+  line-height: 0.5;
+}
+
+/* Для очень маленьких экранов (например, телефонов в портретной ориентации) */
+@media (max-width: 480px) {
+  /* Уменьшаем размер шрифта еще больше */
+  h1,
+  h2 {
+    font-size: 18px;
+  }
+
+  .Card,
+  .profileForm,
+  .driveForm,
+  .loginForm,
+  .signForm,
+  .editForm,
+  .MyCard,
+  .DetailPage {
+    width: 90vw;
+  }
+
+  .userImage {
+    height: 120px;
+    width: 120px;
+  }
+
+  /* Уменьшаем размеры кнопок */
+  .login,
+  .btn-create,
+  .loginForm button,
+  .signForm button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  /* Навигация для маленьких экранов */
+  nav {
+    height: 30px;
+  }
+
+  nav img {
+    width: 50px;
+  }
 }
