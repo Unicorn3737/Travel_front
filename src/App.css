@@ -5,6 +5,8 @@ body {
   background-image: url("/src/images/dino.jpg");
   object-fit: cover;
   background-size: cover;
+  width: 100vw;
+  height: 100vh;
   background-repeat: no-repeat;
 }
 a {
@@ -18,7 +20,6 @@ h1 {
   color: black;
   text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
   text-align: right;
-  margin-left: 700px;
   margin-right: 100px;
   margin-top: 5px;
   background-color: rgba(255, 255, 255, 0.336);
