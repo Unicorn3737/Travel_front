@@ -2,11 +2,14 @@
   color: rgb(65, 126, 5);
 }
 body {
+  background-color: red;
   background-image: url("/src/images/dino.jpg");
   object-fit: cover;
   background-size: cover;
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
   background-repeat: no-repeat;
 }
 a {
@@ -20,8 +23,8 @@ h1 {
   color: black;
   text-shadow: 2px 2px 0 rgba(23, 191, 233, 0.582);
   text-align: right;
-  margin-right: 100px;
   margin-top: 5px;
+  padding-right: 15px;
   background-color: rgba(255, 255, 255, 0.336);
 }
 h2 {

@@ -58,6 +58,25 @@ export const ProfilePage = () => {
     }
   }
 
+  async function handleUnjoin(driveId) {
+    console.log("delete clicked", driveId);
+    try {
+      const { data } = await axios.put(
+        `${API_URL}/drive/unjoin/${driveId}/${user._id}`
+      );
+      console.log("successfully unjoin", data);
+      //update the state to reflect the changes
+      const filteredDrives = joinDrives.filter((driveInFilter) => {
+        if (driveInFilter._id !== driveId) {
+          return true;
+        }
+      });
+      setJoinDrives(filteredDrives);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className="profilePage">
       <div className="Left">
@@ -119,6 +138,16 @@ export const ProfilePage = () => {
                 <h3>Title:{userDrive.title}</h3>
                 <h3>Date:{userDrive.date}</h3>
                 <h3>Phone:{userDrive.phone}</h3>
+                <Link to={`/details/${userDrive._id}`}>
+                  <button>Details</button>
+                </Link>
+                <button
+                  onClick={() => {
+                    handleUnjoin(userDrive._id);
+                  }}
+                >
+                  Unjoin
+                </button>
               </div>
             );
           })
