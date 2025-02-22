@@ -2,7 +2,6 @@
   color: rgb(65, 126, 5);
 }
 body {
-  background-color: red;
   background-image: url("/src/images/dino.jpg");
   object-fit: cover;
   background-size: cover;
